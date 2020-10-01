@@ -64,10 +64,12 @@ function App() {
   const layer6 = data.layer6.childImageSharp.fluid
   const layer7 = data.layer7.childImageSharp.fluid
 
-  const centerX = window.innerWidth / 2
-  const centerY = window.innerHeight / 2
-  const [radiusX, setRadiusX] = useState(centerX)
-  const [radiusY, setRadiusY] = useState(centerY)
+  if (typeof window !== "undefined") {
+    const centerX = window.innerWidth / 2
+    const centerY = window.innerHeight / 2
+    const [radiusX, setRadiusX] = useState(centerX)
+    const [radiusY, setRadiusY] = useState(centerY)
+  }
 
   useEffect(() => {
     // Get correct height function with clearTimeout to prevent too many requests
