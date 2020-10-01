@@ -1,6 +1,69 @@
 import React, { useEffect, useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 function App() {
+  const data = useStaticQuery(graphql`
+    query {
+      layer1: file(relativePath: { eq: "layer1.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer2: file(relativePath: { eq: "layer2.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer3: file(relativePath: { eq: "layer3.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer4: file(relativePath: { eq: "layer4.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer5: file(relativePath: { eq: "layer5.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer6: file(relativePath: { eq: "layer6.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      layer7: file(relativePath: { eq: "layer7.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `)
+  const layer1 = data.layer1.childImageSharp.fluid
+  const layer2 = data.layer2.childImageSharp.fluid
+  const layer3 = data.layer3.childImageSharp.fluid
+  const layer4 = data.layer4.childImageSharp.fluid
+  const layer5 = data.layer5.childImageSharp.fluid
+  const layer6 = data.layer6.childImageSharp.fluid
+  const layer7 = data.layer7.childImageSharp.fluid
+
   const centerX = window.innerWidth / 2
   const centerY = window.innerHeight / 2
   const [radiusX, setRadiusX] = useState(centerX)
@@ -54,8 +117,8 @@ function App() {
               button.style.display = "none"
               container.style.display = "block"
               window.addEventListener("deviceorientation", e => {
-                const gamma = Math.floor(e.gamma)
-                const beta = Math.floor(e.beta)
+                const gamma = e.gamma
+                const beta = e.beta
 
                 if (beta > -80 && beta < 80) {
                   layer1.style.transform = `translate3d(${-gamma * 1.4}px,${
@@ -98,7 +161,7 @@ function App() {
           layer2.style.transform = `translate3d(${-x * 0.18}px,${
             -y * 0.06
           }px,0px`
-          layer3.style.transform = `translate3d(${-x * 0.1}px,${
+          layer3.style.transform = `translate3d(${-x * 0.12}px,${
             -y * 0.05
           }px,0px`
           layer4.style.transform = `translate3d(${-x * 0.08}px,${
@@ -110,9 +173,9 @@ function App() {
           layer6.style.transform = `translate3d(${-x * 0.04}px,${
             -y * 0.02
           }px,0px`
-          layer7.style.transform = `translate3d(${-x * 0.03}px,${
-            -y * 0.01
-          }px,0px`
+          // layer7.style.transform = `translate3d(${-x * 0.03}px,${
+          //   -y * 0.01
+          // }px,0px`
         })
       }
     }
@@ -122,13 +185,27 @@ function App() {
     <>
       <button className="button">CLICK TO SHOW</button>
       <div className="parallax-container">
-        <div className="parallax-layer layer7"></div>
-        <div className="parallax-layer layer6"></div>
-        <div className="parallax-layer layer5"></div>
-        <div className="parallax-layer layer4"></div>
-        <div className="parallax-layer layer3"></div>
-        <div className="parallax-layer layer2"></div>
-        <div className="parallax-layer layer1"></div>
+        <div className="parallax-layer layer7">
+          <Img fluid={layer7} alt="" className="" />
+        </div>
+        <div className="parallax-layer layer6">
+          <Img fluid={layer6} alt="" />
+        </div>
+        <div className="parallax-layer layer5">
+          <Img fluid={layer5} alt="" />
+        </div>
+        <div className="parallax-layer layer4">
+          <Img fluid={layer4} alt="" />
+        </div>
+        <div className="parallax-layer layer3">
+          <Img fluid={layer3} alt="" />
+        </div>
+        <div className="parallax-layer layer2">
+          <Img fluid={layer2} alt="" />
+        </div>
+        <div className="parallax-layer layer1">
+          <Img fluid={layer1} alt="" />
+        </div>
       </div>
     </>
   )

@@ -82,9 +82,6 @@ html {
     position: absolute;
   }
   .layer1 {
-    background-image: url(../images/layer1.png);
-    background-size: cover;
-    background-position: center;
     width: 150%;
     height: 46%;
     margin: auto;
@@ -93,41 +90,53 @@ html {
     @include medium {
       width: 140%;
       height: 50%;
-      left: -10%;
-      bottom: -23%;
+      left: -20%;
+      bottom: -20%;
+    }
+    // & > div {
+    //   background-image: url(../images/layer1.png);
+    //   background-size: cover;
+    //   background-position: center;
+    // }
+    .gatsby-image-wrapper {
+      height: 100%;
     }
   }
   .layer2 {
-    background-image: url(../images/layer2.png);
-    background-size: contain;
-    background-position: bottom;
     width: 80px;
     height: 100px;
-    left: 15%;
+    left: 12%;
     bottom: 4%;
     @include medium {
       width: 120px;
       height: 150px;
-      bottom: 10%;
+      bottom: 6%;
     }
+    // & > div {
+    //   background-image: url(../images/layer2.png);
+    //   background-size: contain;
+    //   background-position: bottom;
+    // }
   }
   .layer3 {
-    background-image: url(../images/layer3.png);
-    background-size: contain;
-    background-position: center;
-    width: 8%;
-    height: 15%;
-    right: 10%;
-    bottom: 2%;
+    // background-image: url(../images/layer3.png);
+    // background-size: contain;
+    // background-position: center;
+    bottom: 12%;
+    width: 20%;
+    height: 8%;
+    right: 15%;
     @include medium {
-      bottom: 10%;
+      width: 11%;
+      height: 15%;
+      right: 30%;
     }
   }
   .layer4 {
     //logo
-    background-image: url(../images/layer4.png);
-    background-size: contain;
-    background-position: center;
+    // background-image: url(../images/layer4.png);
+    // background-size: contain;
+    // background-position: center;
     width: 70%;
     height: 40%;
     margin: auto;
@@ -139,25 +148,26 @@ html {
     }
   }
   .layer5 {
-    background-image: url(../images/layer5.png);
-    background-position: center;
-    background-size: contain;
-    width: 170%;
+    // background-image: url(../images/layer5.png);
+    // background-position: center;
+    // background-size: contain;
+    width: 160%;
     height: 250px;
     margin: auto;
     left: -35%;
     right: 0;
     bottom: 12%;
     @include medium {
-      left: -22%;
-      width: 150%;
+      left: 0%;
+      width: 100%;
       height: 400px;
+      bottom: 15%;
     }
   }
   .layer6 {
-    background-image: url(../images/layer6.png);
-    background-size: cover;
-    background-position: top;
+    // background-image: url(../images/layer6.png);
+    // background-size: cover;
+    // background-position: top;
     width: 130%;
     height: 36%;
     margin: auto;
@@ -168,14 +178,20 @@ html {
       height: 45%;
       bottom: -3%;
     }
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   }
   .layer7 {
-    background-image: url(../images/layer7.png);
-    background-size: cover;
+    // background-image: url(../images/layer7.png);
+    // background-size: cover;
     width: 120%;
     height: 110%;
     height: calc(var(--vh, 1vh) * 110);
     left: -10%;
     top: -10%;
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   }
 }
