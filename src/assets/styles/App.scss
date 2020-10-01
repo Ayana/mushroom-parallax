@@ -86,7 +86,7 @@ html {
     height: 46%;
     margin: auto;
     left: -25%;
-    bottom: -23%;
+    bottom: -25%;
     @include medium {
       width: 140%;
       height: 50%;
@@ -101,7 +101,7 @@ html {
     width: 80px;
     height: 100px;
     left: 12%;
-    bottom: 4%;
+    bottom: 3%;
     @include medium {
       width: 120px;
       height: 150px;
@@ -109,11 +109,12 @@ html {
     }
   }
   .layer3 {
-    bottom: 12%;
+    bottom: 6%;
     width: 20%;
     height: 8%;
     right: 15%;
     @include medium {
+      bottom: 12%;
       width: 11%;
       height: 15%;
       right: 30%;
@@ -122,13 +123,15 @@ html {
   .layer4 {
     //logo
     width: 70%;
-    height: 40%;
+    height: 25%;
     margin: auto;
     left: 0;
-    top: 15%;
+    top: 25%;
     right: 0;
     @include medium {
       width: 40%;
+      height: 40%;
+      top: 15%;
     }
   }
   .layer5 {
@@ -137,7 +140,7 @@ html {
     margin: auto;
     left: -35%;
     right: 0;
-    bottom: 12%;
+    bottom: 8%;
     @include medium {
       left: 0%;
       width: 100%;

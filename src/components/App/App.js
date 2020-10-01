@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
@@ -64,13 +64,6 @@ function App() {
   const layer6 = data.layer6.childImageSharp.fluid
   const layer7 = data.layer7.childImageSharp.fluid
 
-  if (typeof window !== "undefined") {
-    const centerX = window.innerWidth / 2
-    const centerY = window.innerHeight / 2
-    const [radiusX, setRadiusX] = useState(centerX)
-    const [radiusY, setRadiusY] = useState(centerY)
-  }
-
   useEffect(() => {
     // Get correct height function with clearTimeout to prevent too many requests
     const vh = window.innerHeight * 0.01
@@ -86,9 +79,6 @@ function App() {
           const vh = window.innerHeight * 0.01
           document.documentElement.style.setProperty("--vh", `${vh}px`)
         }
-
-        setRadiusX(window.innerWidth / 2)
-        setRadiusY(window.innerHeight / 2)
       }, 1000)
     }
     window.addEventListener("resize", resizeListener)
@@ -155,8 +145,8 @@ function App() {
         // handle regular non iOS 13+ devices
 
         document.body.addEventListener("mousemove", e => {
-          const x = e.clientX - radiusX
-          const y = e.clientY - radiusY
+          const x = e.clientX - window.innerWidth / 2
+          const y = e.clientY - window.innerHeight / 2
           layer1.style.transform = `translate3d(${-x * 0.25}px,${
             -y * 0.08
           }px,0px`

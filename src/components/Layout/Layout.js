@@ -23,7 +23,6 @@ export default ({ children, location, pageSlug }) => {
           // get correct height
           const vh = window.innerHeight * 0.01
           document.documentElement.style.setProperty("--vh", `${vh}px`)
-          console.log("invoke")
         }
       }, 500)
     }
