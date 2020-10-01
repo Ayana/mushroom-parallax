@@ -1,16 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    siteTitle: `Mushroom Parallax`,
+    siteDescription: `Mushroom Parallax - Device Orientation Experiment`,
+    siteKeywords: `Ayaos`,
+    siteUrl: `https://ayaos.work/`,
+    ogpImage: `/images/img_ogp.jpg`,
+    author: `Ayaos`,
+    social: {
+      twitter: `ayanaosawa`,
+      instagram: `ayaos_eats`,
+      linkedin: `ayana-osawa-22b623b`,
+      github: `Ayana`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -21,10 +31,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#222`,
+        theme_color: `#222`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/favicon.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
