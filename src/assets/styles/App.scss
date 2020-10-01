@@ -93,11 +93,6 @@ html {
       left: -20%;
       bottom: -20%;
     }
-    // & > div {
-    //   background-image: url(../images/layer1.png);
-    //   background-size: cover;
-    //   background-position: center;
-    // }
     .gatsby-image-wrapper {
       height: 100%;
     }
@@ -112,16 +107,8 @@ html {
       height: 150px;
       bottom: 6%;
     }
-    // & > div {
-    //   background-image: url(../images/layer2.png);
-    //   background-size: contain;
-    //   background-position: bottom;
-    // }
   }
   .layer3 {
-    // background-image: url(../images/layer3.png);
-    // background-size: contain;
-    // background-position: center;
     bottom: 12%;
     width: 20%;
     height: 8%;
@@ -134,9 +121,6 @@ html {
   }
   .layer4 {
     //logo
-    // background-image: url(../images/layer4.png);
-    // background-size: contain;
-    // background-position: center;
     width: 70%;
     height: 40%;
     margin: auto;
@@ -148,9 +132,6 @@ html {
     }
   }
   .layer5 {
-    // background-image: url(../images/layer5.png);
-    // background-position: center;
-    // background-size: contain;
     width: 160%;
     height: 250px;
     margin: auto;
@@ -165,9 +146,6 @@ html {
     }
   }
   .layer6 {
-    // background-image: url(../images/layer6.png);
-    // background-size: cover;
-    // background-position: top;
     width: 130%;
     height: 36%;
     margin: auto;
@@ -183,8 +161,6 @@ html {
     }
   }
   .layer7 {
-    // background-image: url(../images/layer7.png);
-    // background-size: cover;
     width: 120%;
     height: 110%;
     height: calc(var(--vh, 1vh) * 110);
