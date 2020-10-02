@@ -40,6 +40,13 @@ function App() {
           }
         }
       }
+      layer_grass: file(relativePath: { eq: "layer_grass.png" }) {
+        childImageSharp {
+          fluid(quality: 70, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
       layer6: file(relativePath: { eq: "layer6.png" }) {
         childImageSharp {
           fluid(quality: 70, maxWidth: 1000) {
@@ -61,6 +68,7 @@ function App() {
   const layer3 = data.layer3.childImageSharp.fluid
   const layer4 = data.layer4.childImageSharp.fluid
   const layer5 = data.layer5.childImageSharp.fluid
+  const layer_grass = data.layer_grass.childImageSharp.fluid
   const layer6 = data.layer6.childImageSharp.fluid
   const layer7 = data.layer7.childImageSharp.fluid
 
@@ -96,6 +104,7 @@ function App() {
     const layer3 = document.querySelector(".layer3")
     const layer4 = document.querySelector(".layer4")
     const layer5 = document.querySelector(".layer5")
+    const layer_grass = document.querySelector(".layer_grass")
     const layer6 = document.querySelector(".layer6")
     const layer7 = document.querySelector(".layer7")
     button.addEventListener("click", onClick)
@@ -124,6 +133,9 @@ function App() {
                   }px,0px)`
                   layer4.style.transform = `translate3d(${-gamma * 1.04}px,${
                     -beta * 1.02
+                  }px,0px)`
+                  layer_grass.style.transform = `translate3d(${-gamma * 1}px,${
+                    -beta * 0.9
                   }px,0px)`
                   layer5.style.transform = `translate3d(${-gamma * 0.8}px,${
                     -beta * 0.9
@@ -159,15 +171,18 @@ function App() {
           layer4.style.transform = `translate3d(${-x * 0.08}px,${
             -y * 0.04
           }px,0px`
+          layer_grass.style.transform = `translate3d(${-x * 0.11}px,${
+            -y * 0.03
+          }px,0px`
           layer5.style.transform = `translate3d(${-x * 0.09}px,${
             -y * 0.03
           }px,0px`
           layer6.style.transform = `translate3d(${-x * 0.04}px,${
             -y * 0.02
           }px,0px`
-          // layer7.style.transform = `translate3d(${-x * 0.03}px,${
-          //   -y * 0.01
-          // }px,0px`
+          layer7.style.transform = `translate3d(${-x * 0.03}px,${
+            -y * 0.01
+          }px,0px`
         })
       }
     }
@@ -185,6 +200,9 @@ function App() {
         </div>
         <div className="parallax-layer layer5">
           <Img fluid={layer5} alt="" />
+        </div>
+        <div className="parallax-layer layer_grass">
+          <Img fluid={layer_grass} alt="" />
         </div>
         <div className="parallax-layer layer4">
           <Img fluid={layer4} alt="" />
