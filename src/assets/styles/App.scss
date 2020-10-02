@@ -50,6 +50,7 @@ html {
   height: calc(var(--vh, 1vh) * 100);
 }
 .button {
+  opacity: 0;
   font-family: "Amatic SC", cursive;
   background: #e22c2c;
   color: white;

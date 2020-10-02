@@ -107,7 +107,10 @@ function App() {
     const layer_grass = document.querySelector(".layer_grass")
     const layer6 = document.querySelector(".layer6")
     const layer7 = document.querySelector(".layer7")
+
+    // Detect if device need permission
     if (typeof DeviceOrientationEvent.requestPermission === "function") {
+      button.style.opacity = "1"
       button.addEventListener("click", onClick)
     } else {
       button.style.display = "none"
