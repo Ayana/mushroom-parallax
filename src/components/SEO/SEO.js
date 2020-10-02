@@ -45,6 +45,11 @@ const SEO = ({ lang, pageSlug }) => {
         title={isLangJa ? siteTitleJa : siteTitle}
         defaultTitle={siteTitle}
       >
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+
         {/* General tags */}
         <meta name="image" content={siteUrl + ogpImage} />
         <meta

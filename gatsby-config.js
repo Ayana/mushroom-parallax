@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteTitle: `Mushroom Parallax`,
-    siteDescription: `Mushroom Parallax - Device Orientation Experiment`,
+    siteDescription: `Device Orientation Experiment with Gatsby.`,
     siteKeywords: `Ayaos`,
-    siteUrl: `https://ayaos.work/`,
+    siteUrl: `https://mushroom-parallax.netlify.app/`,
     ogpImage: `/images/img_ogp.jpg`,
     author: `Ayaos`,
     social: {
