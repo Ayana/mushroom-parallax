@@ -107,8 +107,28 @@ function App() {
     const layer_grass = document.querySelector(".layer_grass")
     const layer6 = document.querySelector(".layer6")
     const layer7 = document.querySelector(".layer7")
-    button.addEventListener("click", onClick)
+    if (typeof DeviceOrientationEvent.requestPermission === "function") {
+      button.addEventListener("click", onClick)
+    } else {
+      button.style.display = "none"
+      container.style.display = "block"
+      // handle regular non iOS 13+ devices
 
+      document.body.addEventListener("mousemove", e => {
+        const x = e.clientX - window.innerWidth / 2
+        const y = e.clientY - window.innerHeight / 2
+        layer1.style.transform = `translate3d(${-x * 0.25}px,${-y * 0.08}px,0px`
+        layer2.style.transform = `translate3d(${-x * 0.18}px,${-y * 0.06}px,0px`
+        layer3.style.transform = `translate3d(${-x * 0.12}px,${-y * 0.05}px,0px`
+        layer4.style.transform = `translate3d(${-x * 0.08}px,${-y * 0.04}px,0px`
+        layer_grass.style.transform = `translate3d(${-x * 0.11}px,${
+          -y * 0.03
+        }px,0px`
+        layer5.style.transform = `translate3d(${-x * 0.09}px,${-y * 0.03}px,0px`
+        layer6.style.transform = `translate3d(${-x * 0.04}px,${-y * 0.02}px,0px`
+        layer7.style.transform = `translate3d(${-x * 0.03}px,${-y * 0.01}px,0px`
+      })
+    }
     function onClick() {
       // feature detect
       if (typeof DeviceOrientationEvent.requestPermission === "function") {
